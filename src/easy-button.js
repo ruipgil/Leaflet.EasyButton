@@ -1,4 +1,4 @@
-(function(){
+(function(w){
 
 // This is for grouping buttons into a bar
 // takes an array of `L.easyButton`s and
@@ -310,7 +310,7 @@ L.Control.EasyButton = L.Control.extend({
 
 });
 
-L.easyButton = function(/* args will pass automatically */){
+w.EasyButton = L.easyButton = function(/* args will pass automatically */){
   var args = Array.prototype.concat.apply([L.Control.EasyButton],arguments);
   return new (Function.prototype.bind.apply(L.Control.EasyButton, args));
 };
@@ -367,5 +367,4 @@ function buildIcon(ambiguousIconString) {
 
   return tmpIcon;
 }
-
-})();
+})((typeof module !== undefined ? module.exports : false) || this);
